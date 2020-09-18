@@ -1,5 +1,5 @@
 {% extends 'profile/base.html' %}
-
+{% load crispy_forms_tags %}
 {% block styles %}
 <style>
 h1{
@@ -17,7 +17,7 @@ h1{
 {% if form %}
   <form action="" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form|crispy }}
   <input type="submit" value="Submit" class="btn btn-default">
   </form>
 {% endif %}
