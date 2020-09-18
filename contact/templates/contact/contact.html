@@ -10,16 +10,19 @@ h1{
 {% endblock %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-{% if message_form %}
-  <p>{{ message_form }}</p>
-{% endif %}
-{% if form %}
-  <form action="" method="post">
-  {% csrf_token %}
-  {{ form|crispy }}
-  <input type="submit" value="Submit" class="btn btn-default">
-  </form>
-{% endif %}
-
+<div class='row'>
+  <div class='col-sm-6 col-sm-offset-3'>
+    <h1>{{ title }}</h1>
+    {% if message_form %}
+      <p>{{ message_form }}</p>
+    {% endif %}
+    {% if form %}
+      <form action="" method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit" value="Submit" class="btn btn-default">
+      </form>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}
