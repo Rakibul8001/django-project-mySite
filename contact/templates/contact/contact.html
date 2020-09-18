@@ -1,0 +1,25 @@
+{% extends 'profile/base.html' %}
+
+{% block styles %}
+<style>
+h1{
+  color: blue;
+  font-size: 24px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% if message_form %}
+  <p>{{ message_form }}</p>
+{% endif %}
+{% if form %}
+  <form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit" class="btn btn-default">
+  </form>
+{% endif %}
+
+{% endblock %}
